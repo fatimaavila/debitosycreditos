@@ -37,6 +37,8 @@ class Main {
   public static void mostrar() {
   //double s = 0;
   for (int i = 0; i < contador; i++) {
+     System.out.print(i+1);
+     System.out.print("    ");
      System.out.println(transac[i]);               
   }
   } //mostrar
@@ -85,6 +87,20 @@ public static double ingresardebito(double debito) {
    return t;
   } //conteo de debitos
   
+  public static void eliminar() {
+  //double s = 0;
+  for (int i = 0; i < contador; i++) {
+     System.out.print(i+1);
+     System.out.print("    ");
+     System.out.println(transac[i]); 
+
+  } // termina for
+  System.out.println("Ingrese el número de transacción que quiere eliminar"); 
+  Scanner scan3 = new Scanner(System.in);
+     int posicion = 0;
+     posicion = scan3.nextInt();
+     transac[posicion-1]=0;
+  } //eliminar
 
 
 
@@ -109,6 +125,7 @@ public static double ingresardebito(double debito) {
       System.out.println("i. Mostrar las transacciones");
       System.out.println("j. Eliminar créditos");
       System.out.println("x. Salir");
+      System.out.println("\u001B[31m"+"Créditos en signo negativo - \u001B[0m");
       System.out.println("Seleccione una opción: ");
       Scanner scan = new Scanner(System.in); // Create a Scanner object
       opcion = scan.next();
@@ -182,15 +199,20 @@ public static double ingresardebito(double debito) {
 
 
       if (opcion.equals("I")) {
+           System.out.println("\n");
            System.out.println("Transacciones ingresadas");
+           System.out.println("\u001B[31m"+"Créditos en signo negativo - \u001B[0m");
             mostrar();
             System.out.println("\n");
 
       } // fin opcion i
 
         if (opcion.equals("J")) {
-           System.out.println("Transacciones ingresadas");
-            mostrar();
+           System.out.println("Eliminar transacciones");
+            System.out.println("\u001B[31m"+"Créditos en signo negativo - \u001B[0m");
+            eliminar();
+            
+            
             System.out.println("\n");
             
       } // fin opcion j
