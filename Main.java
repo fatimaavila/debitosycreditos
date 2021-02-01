@@ -73,14 +73,18 @@ public static double ingresardebito(double debito) {
 
   } //debito mas grande 
 
-
-  public static void conteodedebitos() {
-  //double s = 0;
+ public static double conteodedebitos() {
+  double s = 0;
+  int t =0;
   for (int i = 0; i < contador; i++) {
     if(transac[i]>0){
-     System.out.println(transac[i]);               
-  } }
-  } //mostrar
+       //s = s + transac[i];  
+       t = t +1;
+    }                 
+  }
+   return t;
+  } //conteo de debitos
+  
 
 
 
@@ -171,7 +175,7 @@ public static double ingresardebito(double debito) {
 
       if (opcion.equals("H")) {
            System.out.println("Conteo de debitos");
-           conteodedebitos();
+           System.out.println(conteodedebitos());
            System.out.println("\n");
   
       } // fin opcion h
@@ -184,7 +188,7 @@ public static double ingresardebito(double debito) {
 
       } // fin opcion i
 
-        if (opcion.equals("I")) {
+        if (opcion.equals("J")) {
            System.out.println("Transacciones ingresadas");
             mostrar();
             System.out.println("\n");
