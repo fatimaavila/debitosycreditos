@@ -1,9 +1,10 @@
 import java.util.Scanner;
-
+import java.util.Arrays; 
 class Main {
 
  static double[] transac = new double[100];
  static int contador;
+ 
 
   public static double saldo() {
   double s = 0;
@@ -64,6 +65,12 @@ public static double ingresardebito(double debito) {
   }
    return s/t;
   } //promedio debitos
+
+   public static double grande() {
+   double[] transacordenado =  transac;
+   Arrays.sort(transacordenado);
+   return transacordenado[99];
+  } //debito mas grande 
 
 
 
@@ -142,6 +149,23 @@ public static double ingresardebito(double debito) {
            System.out.println("\n");
   
       } // fin opcion f
+
+       if (opcion.equals("G")) {
+           System.out.println("Débito más grande");
+           System.out.println(grande());
+           System.out.println("\n");
+  
+      } // fin opcion g
+
+      if (opcion.equals("H")) {
+           System.out.println("Débito más grande:");
+           System.out.println(promediodebitos());
+           System.out.println("\n");
+  
+      } // fin opcion g
+
+
+
 
       if (opcion.equals("I")) {
            System.out.println("Transacciones ingresadas");
