@@ -13,6 +13,26 @@ class Main {
    return s;
   } //sumar
 
+  public static double sumadebitos() {
+  double s = 0;
+  for (int i = 0; i < contador; i++) {
+    if(transac[i]>0){
+       s = s + transac[i];  
+    }                 
+  }
+   return s;
+  } //sumar debitos
+
+  public static double sumacreditos() {
+  double s = 0;
+  for (int i = 0; i < contador; i++) {
+    if(transac[i]<0){
+       s = s + transac[i];  
+    }                 
+  }
+   return s*-1;
+  } //sumar creditos
+
   public static void mostrar() {
   //double s = 0;
   for (int i = 0; i < contador; i++) {
@@ -64,6 +84,7 @@ public static double ingresardebito(double debito) {
            Scanner scan2 = new Scanner(System.in);
             valor = scan2.nextDouble();
             System.out.printf("Se ingreso el débito: %f%n", ingresardebito(valor));
+            System.out.println("\n");
 
   
       } // fin opcion a
@@ -74,16 +95,40 @@ public static double ingresardebito(double debito) {
            Scanner scan2 = new Scanner(System.in);
             valor = scan2.nextDouble();
             System.out.printf("Se ingreso el crédito: %f%n", ingresarcredito(valor));
+            System.out.println("\n");
+
 
   
       } // fin opcion b
+
+       if (opcion.equals("C")) {
+           System.out.println("Total débitos:");
+            System.out.println(sumadebitos());
+            System.out.println("\n");
+  
+      } // fin opcion c
+
+       if (opcion.equals("D")) {
+           System.out.println("Total créditos");
+            System.out.println(sumacreditos());
+            System.out.println("\n");
+  
+      } // fin opcion d
 
 
       if (opcion.equals("E")) {
            System.out.println("Saldo total:");
            System.out.println(saldo());
+           System.out.println("\n");
   
-      } // fin opcion b
+      } // fin opcion e
+
+      if (opcion.equals("F")) {
+           System.out.println("Promedio de débitos");
+           System.out.println(saldo());
+           System.out.println("\n");
+  
+      } // fin opcion f
 
       if (opcion.equals("I")) {
            System.out.println("Transacciones ingresadas");
@@ -92,7 +137,7 @@ public static double ingresardebito(double debito) {
 
 
   
-      } // fin opcion a
+      } // fin opcion i
 
       if (opcion.equals("X")) {
         System.out.println("0 Salir");
