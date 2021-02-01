@@ -70,7 +70,19 @@ public static double ingresardebito(double debito) {
    double[] transacordenado =  transac;
    Arrays.sort(transacordenado);
    return transacordenado[99];
+
   } //debito mas grande 
+
+
+  public static void conteodedebitos() {
+  //double s = 0;
+  for (int i = 0; i < contador; i++) {
+    if(transac[i]>0){
+     System.out.println(transac[i]);               
+  } }
+  } //mostrar
+
+
 
 
 
@@ -158,13 +170,11 @@ public static double ingresardebito(double debito) {
       } // fin opcion g
 
       if (opcion.equals("H")) {
-           System.out.println("Débito más grande:");
-           System.out.println(promediodebitos());
+           System.out.println("Conteo de debitos");
+           conteodedebitos();
            System.out.println("\n");
   
-      } // fin opcion g
-
-
+      } // fin opcion h
 
 
       if (opcion.equals("I")) {
@@ -172,9 +182,14 @@ public static double ingresardebito(double debito) {
             mostrar();
             System.out.println("\n");
 
-
-  
       } // fin opcion i
+
+        if (opcion.equals("I")) {
+           System.out.println("Transacciones ingresadas");
+            mostrar();
+            System.out.println("\n");
+            
+      } // fin opcion j
 
       if (opcion.equals("X")) {
         System.out.println("0 Salir");
