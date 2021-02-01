@@ -99,7 +99,12 @@ public static double ingresardebito(double debito) {
   Scanner scan3 = new Scanner(System.in);
      int posicion = 0;
      posicion = scan3.nextInt();
+     if (posicion >=1 && posicion <=99){
      transac[posicion-1]=0;
+     System.out.println("Posición eliminada... valor 0..."); 
+     } else { 
+       System.out.println("Posición fuera de rango.."); 
+     }
   } //eliminar
 
 
@@ -115,8 +120,23 @@ private static double inputAmount() {
             input.nextLine();
         }
     }
-}
+} // input amount
 
+private static double inputInt() {
+  //https://stackoverflow.com/questions/24414299/java-scanner-exception-handling
+  int entero=0;
+    Scanner input = new Scanner(System.in);
+    while (true) {
+        System.out.println("Ingrese un valor entero");
+        try {
+          entero = input.nextInt();
+            return entero;
+        }
+        catch (java.util.InputMismatchException e) {
+            input.nextLine();
+        }
+    }
+} // input int
 
   // ----- Main -----------------
   public static void main(String[] args) {
