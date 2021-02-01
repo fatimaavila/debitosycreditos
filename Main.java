@@ -103,7 +103,19 @@ public static double ingresardebito(double debito) {
   } //eliminar
 
 
-
+private static double inputAmount() {
+  //https://stackoverflow.com/questions/24414299/java-scanner-exception-handling
+    Scanner input = new Scanner(System.in);
+    while (true) {
+        System.out.println("Ingrese un valor numérico");
+        try {
+            return input.nextDouble();
+        }
+        catch (java.util.InputMismatchException e) {
+            input.nextLine();
+        }
+    }
+}
 
 
   // ----- Main -----------------
@@ -133,10 +145,10 @@ public static double ingresardebito(double debito) {
       //System.out.println(opcion.length());
 
       if (opcion.equals("A")) {
-           System.out.println("Ingrese el débito:");
-           Scanner scan2 = new Scanner(System.in);
-            valor = scan2.nextDouble();
-            System.out.printf("Se ingreso el débito: %f%n", ingresardebito(valor));
+           
+        System.out.println("Ingrese el débito:");
+        valor = inputAmount();
+            System.out.printf("Se ingreso el débito: %.2f%n", ingresardebito(valor));
             System.out.println("\n");
 
   
@@ -145,8 +157,7 @@ public static double ingresardebito(double debito) {
 
       if (opcion.equals("B")) {
            System.out.println("Ingrese el crédito:");
-           Scanner scan2 = new Scanner(System.in);
-            valor = scan2.nextDouble();
+            valor = inputAmount();
             System.out.printf("Se ingreso el crédito: %f%n", ingresarcredito(valor));
             System.out.println("\n");
 
