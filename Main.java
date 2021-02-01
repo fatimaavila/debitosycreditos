@@ -50,7 +50,20 @@ public static double ingresardebito(double debito) {
   transac[contador]= credito * -1;
   contador = contador + 1;
   return credito;
-  } //ingreso debitos
+  } //ingreso creditos
+
+
+ public static double promediodebitos() {
+  double s = 0;
+  int t =0;
+  for (int i = 0; i < contador; i++) {
+    if(transac[i]>0){
+       s = s + transac[i];  
+       t = t +1;
+    }                 
+  }
+   return s/t;
+  } //promedio debitos
 
 
 
@@ -125,7 +138,7 @@ public static double ingresardebito(double debito) {
 
       if (opcion.equals("F")) {
            System.out.println("Promedio de débitos");
-           System.out.println(saldo());
+           System.out.println(promediodebitos());
            System.out.println("\n");
   
       } // fin opcion f
